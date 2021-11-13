@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"  />
+    <meta name="theme-color" content="#25bcff" />
+    <title>List Items Hover Effect</title>
+    <style>
+      *{
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+      
+      header {
+        position: sticky;
+        top: 0;
+        left: 0;
+        background: #25bcff;
+        padding: 12px 10px;
+        text-align: center;
+        font-family: Arial;
+        font-size: 18px;
+        font-weight: 620;
+        color: rgb(251,250,250);
+        
+      }
+      header small{
+        font-size: 14px;
+        font-weight: 300;
+        padding: 0px;
+        color:rgba(0,0,0,0.375);
+        font-family: Sans-Serif;
+      }
+      .main{
+        display: grid;
+        align-items: center;
+        justify-content: center;
+        min-height: 100vh;
+        background: #f6f6f6;
+      }
+      
+      .box{
+        width: 300px;
+        
+      }
+      .box h3{
+        color: #fff;
+        background: #03a9f4;
+        padding: 10px 20px;
+        font-weight: 700;
+        font-size:20px ;
+        border-radius: 10px 10px 0px 0px;
+        font-family: Tahoma;
+        text-align: center;
+      }
+      .box ul {
+        position: relative;
+        background: #fff;
+      }
+      .box ul:hover li{
+        opacity: 0.3;
+      }
+      .box ul li {
+        list-style: none;
+        padding: 10px;
+        width:100%;
+        box-shadow: 0px 5px 25px rgba(0,0,0,0.2);
+        transition: transform 0.3s;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+      .box ul li:hover{
+        transform: scale(1.1);
+        z-index: 100;
+        background: #25bcff;
+        box-shadow: 0px 5px 25px rgba(0,0,0,0.2);
+        color: #fff;
+        opacity: 1;
+      }
+      
+      .box ul li .num{
+        width: 20px;
+        height: 20px;
+        line-height: 20px;
+        background: #25bcff;
+        text-align: center;
+        color: #fff;
+      margin-right: 2px;
+        border-radius: 50%;
+        margin-top: 10px;
+        font-size:12px ;
+        font-weight: 600;
+        transform: translateY(-2px);
+      }
+      .box ul li:hover .num {
+        background:#fff;
+        color: #25bcff;
+      }
+      
+      .box ul li .action {
+        
+       display: flex;
+        align-items: center;
+        justify-content: center;
+      width: 40px;
+      height: 40px;
+        font-size: 1.7rem;
+      }
+      .box ul li .action .dlt{
+        color: red;
+       font-size: 20px;
+       padding-right: 5px;
+      }
+       .box ul li .action .dlt:hover{
+     color: rgb(255,202,37);
+     cursor: pointer;
+     }
+     .box ul li .action .eid{
+        color: rgb(17,48,29);
+        font-size: 20px;
+      }
+           .box ul li .action .eid:hover{
+             color: #5800ff;
+             cursor: pointer;
+           }
+      
+      .box .add {
+        position: relative;
+        width: 100%;
+        background: #25bcff;
+        margin-bottom: 10px;
+        display: flex;
+        justify-content: space-between;
+        padding: 5px;
+        align-items: center;
+        border-radius: 35px;
+      } 
+      .box .add .item{
+        width: 100%;
+        height: 30px;
+        padding: 13px;
+        border-radius: 30px;
+        margin-right: 5px;
+        outline: none;
+        border: none; 
+        transition: all 0.3s;
+        box-shadow: 0px 5px 23px rgba(81,234,237,0.7);
+      } 
+      .box .add .item:hover{
+       animation: prg 3s linear;
+      }
+      @keyframes prg {
+        0%{
+          border-bottom:2px solid red;
+          background: #dcfbb7;
+        }
+        50%{
+          border-bottom:2px solid #00ffda;
+          background: #f98ac7;
+        }
+        100%{
+          border-bottom:2px solid #7f00ff;
+          background: #ffd16b;
+        }
+      }
+      .box .add .plus { 
+        display: flex;
+        text-align: center;
+        justify-content: center;
+        background:#fff;
+        font-size: 1.7rem;
+        
+        border-radius: 50%;
+       color: black;
+       font-weight: 800;
+       box-shadow: 0px 5px 2px rgba(0,0,0,0.7);
+       cursor: pointer;
+       transition: all 0.4s;
+      }
+      .box .add .plus:hover{
+        transform: scale(1.1);
+        outline: none;
+        background: #0a100a;
+        color:#fff;
+        box-shadow: none;
+      }
+      .box .alert-box {
+        padding-bottom: 30px;
+        display: flex;
+        align-items: center;
+        width: 100%;
+        height: 35px;
+        padding: 5px;
+        
+        justify-content: center;
+      }
+      .box .alert-box .alert{
+        background: rgba(56,198,253,0.777);
+      
+        border-radius: 1px;
+        box-shadow: 0px 0px 10px  rgba(12,255,180,0.7);
+      }
+      .box .alert-box .alert #msg{
+        height: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <span>To-do App</span><br>
+      <small>created by: sujeet Kumar</small>
+    </header>
+    <div class="main">
+     
+    <div class="box">
+       <div class="alert-box">
+        <div class="alert">
+          <span id="msg"></span>
+        </div>
+      </div>
+       <div class="add">
+        <input type="text" name="itme" class="item" id="item" placeholder="Write here" />
+        <div class="plus" id="plus">
+          <i class="fas fa-plus-circle"></i>
+        </div>
+      </div>
+      <span id="root"></span>
+  <!--    <h3>List Items Hover Design</h3>
+      <ul id="root"> 
+      
+    
+      </ul>-->
+    </div>
+    </div>
+   <script src="to-do.js" type="text/javascript" charset="utf-8"></script>
+  </body>
+</html>
